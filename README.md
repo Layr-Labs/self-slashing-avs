@@ -1,66 +1,19 @@
-## Foundry
+## Self Slashing AVS
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
-
-Foundry consists of:
-
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
+This is a simple "Meta-AVS" that allows Operators and AVSs to test out slashing functionality. `SelfSlasher` is an implementation of the `BaseSlasher` from [`eigenlayer-middleware`](https://github.com/Layr-Labs/eigenlayer-middleware) with a single additional function, `selfSlash`, which allows an operator to slash themselves (but no one else) however they wish. A single `operatorSet` with ID 0 has been instantiated which will accept registrations and deregistrations from any operators, and accepts WETH as sole asset.
 
 ## Usage
 
-### Build
+Use the CLI to allocate and register for the meta-AVS's operator set, and then call `selfSlash` with the 0 ID and `wadToSlash` with however much you'd like to slash yourself. State updates can then be read from the `delegationManager` and the `allocationManager`.
 
-```shell
-$ forge build
-```
+## Deployments
 
-### Test
+### Holesky
 
-```shell
-$ forge test
-```
+| Name | Proxy | Implementation | 
+| -------- | -------- | -------- |
+[`SelfSlasher`](https://github.com/Layr-Labs/self-slashing-avs/blob/master/src/SelfSlasher.sol) | n/a| [0x8c5b7ea2a3f83d803b6751623fbe517aa1da148c](https://holesky.etherscan.io/address/0x8c5b7ea2a3f83d803b6751623fbe517aa1da148c) |
+[`StrategyBase (WETH)`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/slashing-magnitudes/src/contracts/strategies/StrategyBaseTVLLimits.sol) | [`0x80528D6e9A2BAbFc766965E0E26d5aB08D9CFaF9`](https://holesky.etherscan.io/address/0x80528D6e9A2BAbFc766965E0E26d5aB08D9CFaF9) | [`0x5FdD...3C1e`](https://holesky.etherscan.io/address/0x5FdD6a71a3C88111474C812Ca6d60942d7923C1e) |
+| [`DelegationManager`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/slashing-magnitudes/src/contracts/core/DelegationManager.sol) | [`0xA44151489861Fe9e3055d95adC98FbD462B948e7`](https://holesky.etherscan.io/address/0xA44151489861Fe9e3055d95adC98FbD462B948e7) | [`0xDa6F...BF48`](https://holesky.etherscan.io/address/0xDa6F662777aDB5209644cF5cf1A61A2F8a99BF48) |
+| [`AllocationManager`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/slashing-magnitudes/src/contracts/core/AllocationManager.sol) | [`0x78469728304326CBc65f8f95FA756B0B73164462`](https://holesky.etherscan.io/address/0x78469728304326CBc65f8f95FA756B0B73164462) | [`0xe03d...4ee2`](https://holesky.etherscan.io/address/0xe03d546ada84b5624b50aa22ff8b87badef44ee2) |
 
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
