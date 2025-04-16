@@ -12,7 +12,7 @@ Use the CLI to allocate and register for the meta-AVS's operator set, and then c
 
 | Name | Proxy | Implementation | 
 | -------- | -------- | -------- |
-[`SelfSlasherSimple`](https://github.com/Layr-Labs/self-slashing-avs/blob/master/src/SelfSlasherSimple.sol) | n/a | [0x8c5b7ea2a3f83d803b6751623fbe517aa1da148c](https://holesky.etherscan.io/address/0x4C12323f00A41CCf8c787AC482552C01b650EFFF)|
+[`SelfSlasherSimple`](https://github.com/Layr-Labs/self-slashing-avs/blob/master/src/SelfSlasherSimple.sol) | n/a | [0x4C12323f00A41CCf8c787AC482552C01b650EFFF](https://holesky.etherscan.io/address/0x4C12323f00A41CCf8c787AC482552C01b650EFFF)|
 [`StrategyBase (WETH)`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/slashing-magnitudes/src/contracts/strategies/StrategyBaseTVLLimits.sol) | [`0x80528D6e9A2BAbFc766965E0E26d5aB08D9CFaF9`](https://holesky.etherscan.io/address/0x80528D6e9A2BAbFc766965E0E26d5aB08D9CFaF9) | [`0x5FdD...3C1e`](https://holesky.etherscan.io/address/0x5FdD6a71a3C88111474C812Ca6d60942d7923C1e) |
 | [`DelegationManager`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/slashing-magnitudes/src/contracts/core/DelegationManager.sol) | [`0xA44151489861Fe9e3055d95adC98FbD462B948e7`](https://holesky.etherscan.io/address/0xA44151489861Fe9e3055d95adC98FbD462B948e7) | [`0xDa6F...BF48`](https://holesky.etherscan.io/address/0xDa6F662777aDB5209644cF5cf1A61A2F8a99BF48) |
 | [`AllocationManager`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/slashing-magnitudes/src/contracts/core/AllocationManager.sol) | [`0x78469728304326CBc65f8f95FA756B0B73164462`](https://holesky.etherscan.io/address/0x78469728304326CBc65f8f95FA756B0B73164462) | [`0xe03d...4ee2`](https://holesky.etherscan.io/address/0xe03d546ada84b5624b50aa22ff8b87badef44ee2) |
