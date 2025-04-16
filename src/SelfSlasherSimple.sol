@@ -1,13 +1,11 @@
 // SPDX-License-Identifier: BUSL-1.1
 pragma solidity ^0.8.27;
 
-import {SlasherBase} from "eigenlayer-middleware/src/slashers/base/SlasherBase.sol";
 import {
     IAllocationManager,
     IAllocationManagerTypes
 } from "eigenlayer-contracts/src/contracts/interfaces/IAllocationManager.sol";
 import {IStrategy} from "eigenlayer-contracts/src/contracts/interfaces/IStrategy.sol";
-import {ISlashingRegistryCoordinator} from "eigenlayer-middleware/src/interfaces/ISlashingRegistryCoordinator.sol";
 import {OperatorSet} from "eigenlayer-contracts/src/contracts/libraries/OperatorSetLib.sol";
 
 /// @title SelfSlasherSimploe
